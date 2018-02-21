@@ -76,7 +76,7 @@ const searchAllUsers = function(options, users, idx, callback) {
       if (blog.author !== author) {       // no re-blogs
         return null;
       } // if (blog.author !== author)
-      blog.created = new Date(blog.created);
+      blog.created = new Date(blog.created + 'Z');
       if (blog.created.getTime() < today.getTime()) {
         return null;                      // only today's blogs
       } // if (blog.created < today)

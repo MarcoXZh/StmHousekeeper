@@ -1,6 +1,6 @@
 {
   "name": "stmhousekeeper",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "The robot to manage Steemit account by automatically blogging, voting, claiming, etc.",
   "main": "index.js",
   "scripts": {
@@ -23,8 +23,10 @@
   },
   "homepage": "https://github.com/MarcoXZh/StmHousekeeper#readme",
   "dependencies": {
+    "alphanum-sort": "^1.0.2",
     "cron": "^1.3.0",
     "mongoose": "^5.0.6",
+    "request": "^2.83.0",
     "steem": "^0.6.4",
     "wait-for-stuff": "^1.3.0"
   }

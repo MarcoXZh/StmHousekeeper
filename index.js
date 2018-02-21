@@ -8,6 +8,7 @@ const steem = require('steem');
 
 const concatJSON = require('./libs/concat_json');
 const encryption = require('./libs/libencryption');
+const blog = require('./jobs/Blog.js');
 const claim = require('./jobs/Claim.js');
 const vote = require('./jobs/Vote.js');
 
@@ -45,9 +46,9 @@ steem.api.setOptions({url: 'https://api.steemit.com'});
   STEEMIT_MIN_REPLY_INTERVAL = 20000000;            // Reply every 20s
   STEEMIT_MIN_VOTE_INTERVAL_SEC = 3;                // Vote every 3s
 */
-options.interBlog   = 305; // 3min + 5s
-options.interReply  = 25;  //  20s + 5s
-options.interVote   = 4;   //   3s + 1s
+options.interBlog   = 360; // 5min + 60s
+options.interReply  = 23;  //  20s +  3s
+options.interVote   = 4;   //   3s +  1s
 options.interClaim  = 60;  // No regulation, so just pick 60s
 options.claimStart  = {hour: 0, minute: 0, second: 10};
 options.voteStart   = {hour: 0, minute: 0, second: 20};
@@ -55,6 +56,6 @@ options.blogStart   = {hour: 0, minute: 0, second: 30};
 options.replyStart  = {hour: 0, minute: 0, second: 40};
 
 // Start jobs
-claim(options);
-vote(options);
-// blog(options);
+// claim(options);
+// vote(options);
+blog(options);

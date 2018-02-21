@@ -1,11 +1,4 @@
 {
-  "users": {
-    "xuzhen": {
-      "cron": {
-        "blog_cnbuddy_delegators": "00 05 00 * * 2,5"
-      }
-    }
-  },
   "db": {
     "engine":   "MongoDB",
     "name":   "steemitdb",

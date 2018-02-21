@@ -1,0 +1,19 @@
+{
+    "blog_author":      "arabel",
+    "days_before":      7,
+    "count":            20,
+    "title":            "Utopian.io发帖数据统计与分析-",
+    "json_metadata": {
+        "tags":             ["cn", "utopian-io", "statistics"],
+        "app":              "steemit/0.1",
+        "format":           "markdown"
+    } ,
+    "body_ext":         ".md",
+    "decimal":          0.01,
+    "fmt_width_idx":    6,
+    "fmt_width_cnt":    8,
+    "fmt_width_name":   22,
+    "fmt_width_type":   16,
+    "fmt_width_author": 16,
+    "fmt_width_title":  26
+}
