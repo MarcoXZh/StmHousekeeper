@@ -1,6 +1,11 @@
 /**
- * How to deal with conflictions
+ * Concat two JSON object
+ * @author:   MarcoXZh3
+ * @version:  1.0.0
  */
+
+
+// How to deal with conflictions
 const MODE_CONCAT =    module.exports.MODE_CONCAT    = 0;
 const MODE_SKIP =      module.exports.MODE_SKIP      = 1;
 const MODE_OVERWRITE = module.exports.MODE_OVERWRITE = 2;
@@ -14,7 +19,7 @@ const MODE_OVERWRITE = module.exports.MODE_OVERWRITE = 2;
  * @return {array|json}                     the concatenated object
  */
 const concatSame = function(source, target, conflict) {
-  if (!conflict || conflict === MODE_CONCAT) {
+  if (!conflict || conflict === MODE_CONCAT) {                  // Default mode
     if (source instanceof Array) {
       return source.concat(target);
     } else if (source.constructor === {}.constructor) {
@@ -46,7 +51,7 @@ const concatJson = module.exports = function(source, target, conflict) {
   let obj = {};
 
   // Everything in source
-  for (k in source) {
+  for (let k in source) {
     if (!{}.hasOwnProperty.call(source, k)) {
       continue;
     } // if (!{}.hasOwnProperty.call(source, k))
@@ -102,15 +107,15 @@ const concatJson = module.exports = function(source, target, conflict) {
         obj[k] = concatSame(source[k], target[k], conflict);
       } // if ... else if ... else
     } // if ... else if ... else ...
-  } // for (k in source)
+  } // for (let k in source)
 
   // Anything in target but not source
-  for (k in target) {
+  for (let k in target) {
     if (k in source) {
       continue;
     } // if (k in source)
     obj[k] = target[k];
-  } // for (k in target) {
+  } // for (let k in target) {
 
   return obj;
 }; // function concatJson(source, target, conflict)

@@ -13,6 +13,7 @@ const Claim = require('../models/claim');
 
 
 const epsilon = 1e-8;
+const fileName = __filename.replace(/\.js$/, '');
 let name = __filename.split(/[\\|/]/);
 name = name[name.length-1].replace(/\.js$/g, '');
 
@@ -23,11 +24,11 @@ name = name[name.length-1].replace(/\.js$/g, '');
  */
 module.exports = function(parentOptions) {
   let options = concatJSON({}, parentOptions);
-  if (fs.existsSync(name + '.json')) {
-    let obj = JSON.parse(fs.readFileSync(name + '.json').toString());
+  if (fs.existsSync(fileName + '.json')) {
+    let obj = JSON.parse(fs.readFileSync(fileName + '.json').toString());
     options = concatJSON(options, obj);
-  } // if (fs.existsSync(name + '.json'))
-  console.log(new Date().toISOString(), name + ': option loaded');
+  } // if (fs.existsSync(fileName + '.json'))
+  console.log(new Date().toISOString(), name + ': options loaded');
 
   // Run the job
   runAllJobs(options);

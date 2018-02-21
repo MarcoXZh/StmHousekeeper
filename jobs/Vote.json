@@ -1,0 +1,22 @@
+{
+  "allFollows": {
+    "1":  ["shenchensucc", "rivalhw", "skenan", "oflyhigh", "sweetsssj"],
+    "2":  ["justyy", "dapeng"]
+  },
+  "users": {
+    "xuzhen": {
+      "follows": {}
+    },
+    "wangwenjing": {
+      "follows": {
+        "1": ["irisz", "angelina6688", "nationalpark", "wang-peilin", "epikhong2007", "vivia", "jychbetter"]
+      }
+    },
+    "arabel": {
+      "follows": {}
+    }
+  },
+  "blogNumber": 2,
+  "maxLevel":   5,
+  "voteDelay":  60
+}
