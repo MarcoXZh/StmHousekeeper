@@ -6,7 +6,6 @@
 const CronJob = require('cron').CronJob;
 const fs = require('fs');
 const path = require('path');
-const steem = require('steem');
 
 const concatJSON = require('../libs/concat_json');
 
@@ -31,7 +30,8 @@ module.exports = function(parentOptions) {
   // Collect all blogging jobs
   let allJobPaths = [
     // TODO: put paths of new jobs here
-    path.join(__dirname, 'Blogs', 'UtopianTopics'),
+    // path.join(__dirname, 'Blogs', 'UtopianTopics'),
+    path.join(__dirname, 'Blogs', 'CnbuddyDelegators'),
   ]; // let allJobPaths = [ ... ];
 
   // Schedule jobs one by one
@@ -56,7 +56,7 @@ module.exports = function(parentOptions) {
 
 
 
-
+    console.log(cron);
     cron = new Date(new Date().getTime() + 1000 + 5000 * idx);
 
 

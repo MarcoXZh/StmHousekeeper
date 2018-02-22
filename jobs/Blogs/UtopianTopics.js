@@ -353,5 +353,4 @@ const log = function(options, body) {
       console.log(new Date().toISOString(), name + ': logged');
     }); // new Claim(claim).save().then(function() { ... });
   }); // db.once('open', function() { ... });
-  return;
 }; // const log = function(options, body) { ... };

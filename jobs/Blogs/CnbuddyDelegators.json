@@ -1,0 +1,20 @@
+{
+    "cron_postfix":     "* * 2,5",
+    "blog_author":      "xuzhen",
+    "source_db": {
+        "engine":           "MongoDB",
+        "host":             "cnbuddy.me",
+        "name":             "steemitdb",
+        "user":             "marcoxzh3"
+
+    },
+    "title":            "cnbuddy股东名单",
+    "json_metadata": {
+        "tags":             ["cn", "statistics", "cnbuddy", "delegation"],
+        "app":              "steemit/0.1",
+        "format":           "markdown"
+    },
+    "body_ext":         ".md",
+    "decimal":          0.01,
+    "permlink":         "-cnbuddy-delegator-list-"
+}
