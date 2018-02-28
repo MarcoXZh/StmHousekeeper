@@ -1,6 +1,6 @@
 {
   "name": "stmhousekeeper",
-  "version": "0.5.0",
+  "version": "0.5.2",
   "description": "The robot to manage Steemit account by automatically blogging, voting, claiming, etc.",
   "main": "index.js",
   "scripts": {

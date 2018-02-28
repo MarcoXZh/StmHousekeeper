@@ -11,7 +11,7 @@ const steem = require('steem');
 const concatJSON = require('../libs/concat_json');
 const searchBlogs = require('./Vote_search');
 const voteBlogs = require('./Vote_vote');
-
+const VoteBlog = require('../models/vote').VoteBlog;
 
 const fileName = __filename.replace(/\.js$/, '');
 let name = __filename.split(/[\\|/]/);

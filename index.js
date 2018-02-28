@@ -56,6 +56,6 @@ options.blogStart   = {hour: 0, minute: 0, second: 30};
 options.replyStart  = {hour: 0, minute: 0, second: 40};
 
 // Start jobs
-// claim(options);
-// vote(options);
+claim(options);
+vote(options);
 blog(options);

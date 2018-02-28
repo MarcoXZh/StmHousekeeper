@@ -7,11 +7,9 @@ const mongoose = require('mongoose');
 const steem = require('steem');
 const wait = require('wait-for-stuff');
 
-const concatJSON = require('../libs/concat_json');
-const {Vote, VoteBlog} = require('../models/vote');
+const VoteBlog = require('../models/vote').VoteBlog;
 
 
-const fileName = __filename.replace(/\.js$/, '');
 let name = __filename.split(/[\\|/]/);
 name = name[name.length-1].replace(/\.js$/g, '');
 
@@ -89,7 +87,7 @@ const voteBlogs = function(options, blogs, idx, callback) {
     if (res.map( (b)=>b.voter ).includes(blog.voter)) { // Blog already upvoted
       // Update status
       VoteBlog.update({voter: blog.voter, author: blog.author,
-                       permlink: blog.permlink }, {status: 'DONE'},
+                       permlink: blog.permlink}, {status: 'DONE'},
                       function(err) {
         if (err) {
           console.error(err.stack);
@@ -169,7 +167,7 @@ const voteBlog = function(options, blog, callback) {
 
     // Update status
     VoteBlog.update({voter: blog.voter, author: blog.author,
-                     permlink: blog.permlink }, {status: 'DONE'},
+                     permlink: blog.permlink}, {status: 'DONE'},
                     function(err) {
       if (err) {
         console.error(err.stack);

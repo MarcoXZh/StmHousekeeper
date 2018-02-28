@@ -1,7 +1,7 @@
 /**
  * The blogging job to announce cnbuddy's delegators
  * @author  MarcoXZh3
- * @version 1.0.0
+ * @version 1.2.1
  */
 const CronJob = require('cron').CronJob;
 const fs = require('fs');
@@ -30,7 +30,7 @@ module.exports = function(parentOptions) {
   // Collect all blogging jobs
   let allJobPaths = [
     // TODO: put paths of new jobs here
-    // path.join(__dirname, 'Blogs', 'UtopianTopics'),
+    path.join(__dirname, 'Blogs', 'UtopianTopics'),
     path.join(__dirname, 'Blogs', 'CnbuddyDelegators'),
   ]; // let allJobPaths = [ ... ];
 
@@ -52,15 +52,6 @@ module.exports = function(parentOptions) {
     let second = (start + idx * options.interBlog) % 60;
     let cron = second + ' ' + minute + ' ' + hour + ' ' +
                (jobOptions.cron_postfix || '* * *');
-
-
-
-
-    console.log(cron);
-    cron = new Date(new Date().getTime() + 1000 + 5000 * idx);
-
-
-
 
     // Schedule the job
     new CronJob(cron, function() {
