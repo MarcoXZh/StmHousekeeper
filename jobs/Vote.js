@@ -1,7 +1,7 @@
 /**
  * The voting job to vote blogs
  * @author  MarcoXZh3
- * @version 1.0.0
+ * @version 1.0.1
  */
 const CronJob = require('cron').CronJob;
 const mongoose = require('mongoose');
@@ -61,7 +61,9 @@ module.exports = function(parentOptions) {
       console.error(err.stack);
       return;
     } // if (err)
-    options.STEEMIT_100_PERCENT = re.STEEMIT_100_PERCENT;
+    options.STEEMIT_100_PERCENT
+      = re.STEEMIT_100_PERCENT ||
+        re.STEEM_100_PERCENT;
 
     // Schedule voting blogs
     // new CronJob(new Date(new Date().getTime() + 1000), function() {
